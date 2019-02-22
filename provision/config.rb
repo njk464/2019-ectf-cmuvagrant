@@ -16,7 +16,7 @@ end
 
 # Configure the VM name within the provider. VM instances are identified using
 # their unique names.
-$vm_name = "vagrant-eCTF"
+$vm_name = "vagrant-CMU"
 
 # Specify the number of CPU cores to allocate to the VM.
 $num_cpus = 2
@@ -30,7 +30,7 @@ $memory_size = 4096
 $enable_gui_mode = true
 
 # Specify the hostname for this machine.
-$hostname = "vagrant-eCTF"
+$hostname = "vagrant-CMU"
 
 # Set to 'true' to enable bridged networking.
 $network_bridged = false
@@ -41,7 +41,7 @@ $network_ip = ""
 
 # this is the git repo to pull for the petalinux project. Note, once pulled this
 # should be forked to your own private repo
-$petalinux_git = "https://github.com/njk464/2019-ectf-cmucode.git"
+$petalinux_git = "git@github.com:njk464/2019-ectf-cmucode.git"
 
 # A list of files to be copied to the VM. Each file will be placed at the same
 # path as the source file.

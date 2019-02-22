@@ -63,15 +63,16 @@ To use the VM:
 
 0. Clone this repository onto your machine.
 1. Navigate to the directory where this `README` is located; this should be where the `Vagrantfile` is.
-2. Modify configuration options contained in `provision/config.rb` as desired (see **Configuring The VM Installation** below).
-3. Download the Petalinux Tools from https://www.xilinx.com/member/forms/download/xef.html?filename=petalinux-v2017.4-final-installer.run and put it in the `downloads` folder.
+2. Generate an rsa keypair and add the public key to your github account [adding a public key](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account).
+3. Copy the private key into the `team` folder and name it `id_rsa`.
+4. Download the Petalinux Tools from https://www.xilinx.com/member/forms/download/xef.html?filename=petalinux-v2017.4-final-installer.run and put it in the `downloads` folder.
 More information about the downloads can be found in `downloads/README.md`.
 Since this is a very large file we recommend having one person on your team download the file and distribute it within your team using a thumb drive.
-4. Create, boot, and provision the VM via the `vagrant up` command.
+5. Create, boot, and provision the VM via the `vagrant up` command.
 Note that the GUI will appear before the vagrant provisioning process has completed.
 Wait for the vagrant process to finish before interacting with the VM.
-5. Restart the VM for all changes to take place.
-6. Follow the instruction in the **Building the Reference Design Instructions** section of [2019-ectf-insecure-example](https://github.com/mitre-cyber-academy/2019-ectf-insecure-example) to build the petalinux reference design.
+6. Restart the VM for all changes to take place.
+7. Follow the instruction in the **Building the Reference Design Instructions** section of [2019-ectf-cmucode](https://github.com/njk464/2019-ectf-cmucode) to build the petalinux reference design.
 
 
 ### Customizing the Provisioning System

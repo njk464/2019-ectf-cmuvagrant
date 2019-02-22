@@ -93,9 +93,9 @@ Vagrant.configure(2) do |config|
     end
   else
     # Configure port forwarding.
-    config.vm.network "forwarded_port", guest: 9999, host: 9999, protocol: 'tcp'
-    config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: 'udp'
-    config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: 'tcp'
+    config.vm.network "forwarded_port", guest: 9999, host: 9998, protocol: 'tcp'
+    config.vm.network "forwarded_port", guest: 8080, host: 8081, protocol: 'udp'
+    config.vm.network "forwarded_port", guest: 8080, host: 8081, protocol: 'tcp'
   end
 
   # VirtualBox-specific configuration.
@@ -123,7 +123,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", privileged: false, path: "./provision/scripts/system_setup.sh"
   config.vm.provision "shell", privileged: false,
               path: "./provision/scripts/petalinux_install.sh"
-  config.vm.provision "shell", path: "./team/customizations.sh"
+  config.vm.provision "shell", privileged: false, path: "./team/customizations.sh"
 
   # Store the version of the Vagrant configuration used to provision the VM.
   config.vm.provision "shell",
