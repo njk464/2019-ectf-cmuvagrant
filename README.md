@@ -1,4 +1,4 @@
-# 2019 Collegiate eCTF Vagrant Setup
+# 2019 Collegiate CMU eCTF Vagrant Setup
 
 This repository contains the necessary code to create a virtual machine with all required dependencies for the 2019 Collegiate MITRE Embedded Capture the Flag event.
 This repository contains a [Vagrant](https://www.vagrantup.com/) configuration script that can be used to construct a development VM for the ECTF.
