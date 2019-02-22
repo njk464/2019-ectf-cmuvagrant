@@ -75,10 +75,9 @@ Wait for the vagrant process to finish before interacting with the VM.
 7. Follow the instruction in the **Building the Reference Design Instructions** section of [2019-ectf-cmucode](https://github.com/njk464/2019-ectf-cmucode) to build the petalinux reference design.
 
 
-### Customizing the Provisioning System
+### Customizations
 
-As part of the provisioning process, a script located at `team/customizations.sh` will be run on the guest vm automatically at the end of the provsioning process.
-If you want to install custom python packages or modify the environment in any way, add the commands to that bash script. Remember, if you install anything new in your environment that is required to build your submission, these need to be installed by that script.
+The script located at `team/customizations.sh` installs bcrypt and pysodium along with adding the private key into the VM
 
 ### Vagrant Commands
 
@@ -156,24 +155,3 @@ You will need to disable the `hardware flow control` setting to have UART work a
 To do so, press `control A` and then `z` while running `minicom`, then hit `O`, go to `Serial port setup`, and then press `F`.
 You may want to save this configuration so you don't need to set this up every time you run `minicom`.
 Once you reset the board, you should see output on the screen indicating that the board is working properly.
-
-#### Creating Your Own Fork
-Once you boot the vm for the first time, we suggest you create a fork of this repo so that you can begin to develop your solution to the ECTF.
-To do this, you must fork the repo, change your fork to the origin, and then add the MITRE repo as another remote.
-Follow these steps below.
-
-1. Change the current origin remote to another name - `git remote rename origin mitre`
-2. Fork the mitre repo on github (Note that you probably want to make the repo private for now so that other teams cannot borrow your development ideas)
-3. Add the fork as the new origin - `git remote add origin git@github...my-fork.git`
-    git@github...my-fork.git is the forked repo you made in step 2.
-
-You can now fetch and push as you normally would using `git fetch origin` and `git push origin`
-
-If we push out updated code, you can fetch this new code using `git fetch mitre`
-
-## Things To Keep In Mind
-
-After the development phase of the challenge, we will provision the attack boards with your modified versions of uboot and petalinux.
-To do this, we will clone your repo and run the `Vagrantfile` provided.
-After that, running the provision scripts MUST successfully build the images and games and the SD card MUST successfully boot on the Xilinx board.
-Only then will it be considered a valid design.
