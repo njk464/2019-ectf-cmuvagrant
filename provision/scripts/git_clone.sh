@@ -3,4 +3,4 @@ if [ -d $2 ]; then
 	exit
 fi
 
-rm -rf ~/MES/ && mkdir ~/MES && git clone $1 $2
+rm -rf ~/MES/ && mkdir ~/MES && git clone --branch "v1.0" --depth 1 $1 $2
