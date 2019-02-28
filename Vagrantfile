@@ -20,10 +20,6 @@ if !File.file?("./downloads/petalinux-v2017.4-final-installer.run")
   raise "Error: Petalinux Tools v2017.4 is required for provisioning."
 end
 
-if !File.file?("./team/id_rsa")
-  raise "Error: Private key not present in team directory"
-end
-
 # load provision config
 require './provision/config.rb'
 
