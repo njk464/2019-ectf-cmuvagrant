@@ -41,7 +41,7 @@ $network_ip = ""
 
 # this is the git repo to pull for the petalinux project. Note, once pulled this
 # should be forked to your own private repo
-$petalinux_git = "git@github.com:njk464/2019-ectf-cmucode.git"
+$petalinux_git = "--branch v1.0 git@github.com:njk464/2019-ectf-cmucode.git"
 
 # A list of files to be copied to the VM. Each file will be placed at the same
 # path as the source file.

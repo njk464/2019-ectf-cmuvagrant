@@ -20,9 +20,6 @@ if !File.file?("./downloads/petalinux-v2017.4-final-installer.run")
   raise "Error: Petalinux Tools v2017.4 is required for provisioning."
 end
 
-if !File.file?("./team/id_rsa")
-  raise "Error: Private key not present in team directory"
-end
 
 # load provision config
 require './provision/config.rb'
@@ -97,9 +94,9 @@ Vagrant.configure(2) do |config|
     end
   else
     # Configure port forwarding.
-    config.vm.network "forwarded_port", guest: 9999, host: 9998, protocol: 'tcp'
-    config.vm.network "forwarded_port", guest: 8080, host: 8081, protocol: 'udp'
-    config.vm.network "forwarded_port", guest: 8080, host: 8081, protocol: 'tcp'
+    config.vm.network "forwarded_port", guest: 9999, host: 9999, protocol: 'tcp'
+    config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: 'udp'
+    config.vm.network "forwarded_port", guest: 8080, host: 8080, protocol: 'tcp'
   end
 
   # VirtualBox-specific configuration.
@@ -127,7 +124,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", privileged: false, path: "./provision/scripts/system_setup.sh"
   config.vm.provision "shell", privileged: false,
               path: "./provision/scripts/petalinux_install.sh"
-  config.vm.provision "shell", privileged: false, path: "./team/customizations.sh"
+  config.vm.provision "shell", path: "./team/customizations.sh"
 
   # Store the version of the Vagrant configuration used to provision the VM.
   config.vm.provision "shell",
