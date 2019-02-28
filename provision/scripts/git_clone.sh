@@ -3,4 +3,7 @@ if [ -d $2 ]; then
 	exit
 fi
 
-rm -rf ~/MES/ && mkdir ~/MES && git clone --branch "v1.0" --depth 1 $1 $2
+ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+cp /vagrant/team/id_rsa ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+rm -rf ~/MES/ && mkdir ~/MES && git clone $1 $2
